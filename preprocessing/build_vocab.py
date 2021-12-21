@@ -60,7 +60,7 @@ def build_vocab(data_dir, db_info, batch_size, max_input_length):
     SRC.build_vocab(train_data, valid_data, test_data, db_information, min_freq=2)
     TRG = SRC
     TOK_TYPES.build_vocab(train_data, valid_data, test_data, db_information, min_freq=2)
-    print(TOK_TYPES)
+    # print(TOK_TYPES)
     train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
         (train_data, valid_data, test_data), sort=False,
         batch_size=batch_size,

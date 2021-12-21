@@ -181,16 +181,16 @@ class Sevi(object):
                 print("End recording...")
                 
 
-        print("recognize speech using Google Cloud Speech")
+        # print("recognize speech using Google Cloud Speech")
         try:
+            display(HTML('<img style="width:100px", src="./img/loading.gif">'))
             text = r.recognize_google(audio)
-            print("Google Cloud Speech thinks you said:\n" + text)
+            clear_output()
+            print("Sevi thinks you said: " + text)
         except sr.UnknownValueError:
-            print("Google Cloud Speech could not understand audio")
+            print("Sevi could not understand audio")
         except sr.RequestError as e:
-            print(
-                "Could not request results from Google Cloud Speech service; {0}".
-                format(e))
+            print("Could not request results from Google Cloud Speech service; {0}".format(e))
         return text
 
     def speech2vis(self, AUDIO_FILE = None):
@@ -227,9 +227,9 @@ class Sevi(object):
 
             pred_query = ' '.join(pred_query.replace('"', "'").split())
 
-            print('[NL Question]:', nl_question)
-            print('[Chart Template]:', chart_template)
-            print('[Predicted VIS Query]:', pred_query)
+            # print('[NL Question]:', nl_question)
+            # print('[Chart Template]:', chart_template)
+            # print('[Predicted VIS Query]:', pred_query)
 
             # print('[The Predicted VIS Result]:')
             return VegaLite(query2vl.to_VegaLite(pred_query, self.data)), query2vl.to_VegaLite(pred_query, self.data)
