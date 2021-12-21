@@ -22,6 +22,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="./GoogleCloud_Key.json" ## the key
 
 import speech_recognition as sr
 
+from IPython.core.display import display, clear_output, HTML
+
 class Sevi(object):
     def __init__(self, trained_model):
         self.data = None
@@ -173,8 +175,11 @@ class Sevi(object):
         else:
             with sr.Microphone() as source:
                 print("Start recording...")
+                display(HTML('<img style="width:100px", src="./img/record.gif">'))
                 audio = r.listen(source)
+                clear_output()
                 print("End recording...")
+                
 
         print("recognize speech using Google Cloud Speech")
         try:
