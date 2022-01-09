@@ -5,7 +5,6 @@
 Sevi is an end-to-end data visualization system that acts as a virtual assistant to allow anyone to create visualizations through either natural language or speech.
 
 
-
 # Environment Setup
 
 * `Python3.6+`
@@ -29,6 +28,9 @@ Install Python dependency via `pip install -r requirements.txt` when the environ
 ## Runing Example
 
 Open the `Sevi.ipynb` to try the running example.
+
+* **NOTE**: The user should configure the [Google Speech-to-Text API](https://cloud.google.com/speech-to-text/docs/libraries). 
+the user can send an email to the author to get *Keys*.
 
 <img src="./img/data.png" width="675">
 <img src="./img/speech2vis.png" width="700">
