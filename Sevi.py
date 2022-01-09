@@ -227,9 +227,10 @@ class Sevi(object):
 
             pred_query = ' '.join(pred_query.replace('"', "'").split())
 
-            # print('[NL Question]:', nl_question)
-            # print('[Chart Template]:', chart_template)
-            # print('[Predicted VIS Query]:', pred_query)
+            if show_progress:
+                print('[NL Question]:', nl_question)
+                print('[Chart Template]:', chart_template)
+                print('[Predicted VIS Query]:', pred_query)
 
             # print('[The Predicted VIS Result]:')
             return VegaLite(query2vl.to_VegaLite(pred_query, self.data)), query2vl.to_VegaLite(pred_query, self.data)
